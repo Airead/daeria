@@ -47,7 +47,7 @@ def google_search(query):
     except TypeError:
         return False
 
-def ag(willie, trigger):
+def g(willie, trigger):
     """Queries Google for the specified input."""
     print 'trigger.groups', trigger.groups()
     query = trigger.group(2);
@@ -70,6 +70,6 @@ def ag(willie, trigger):
     msg = "::%s:: %s - %s" % (query, content, uri)
     print msg
     willie.say(msg)
-ag.commands = ['ag']
-ag.rule = ([u'什么是'], r'(.*)')
-ag.example = '.g netfilter'
+g.commands = ['google', 'g']
+g.rule = ([u'什么是'], r'(.*)')
+g.example = '.google netfilter'
