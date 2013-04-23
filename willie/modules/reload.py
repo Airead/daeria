@@ -12,8 +12,10 @@ import subprocess
 
 def f_reload(willie, trigger):
     """Reloads a module, for use by admins only."""
-    if not trigger.admin: return
-
+    if not trigger.admin:
+        willie.reply("You are not admin")
+        return
+    
     name = trigger.group(2)
     if name == willie.config.owner:
         return willie.reply('What?')
